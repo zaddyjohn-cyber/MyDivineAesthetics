@@ -137,7 +137,11 @@ body {
   }
 
   .lead {
-    @apply text-base leading-relaxed text-warmbrown-500 sm:text-lg;
+    @apply text-base leading-relaxed text-warmbrown-600 sm:text-lg;
+  }
+
+  .body-soft {
+    @apply text-warmbrown-600;
   }
 
   .divider-gold {
