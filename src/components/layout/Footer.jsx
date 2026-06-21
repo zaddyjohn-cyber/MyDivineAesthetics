@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Mail, Phone, MapPin, Sparkles } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin, Sparkles, MessageCircle } from 'lucide-react';
 import Logo from './Logo.jsx';
+import { whatsappLink } from '../../data/contact.js';
 
 const linkGroups = [
   {
@@ -64,6 +65,15 @@ export default function Footer() {
                 className="grid h-10 w-10 place-items-center rounded-full border border-champagne-200/60 bg-white/70 text-warmbrown-600 transition hover:bg-gradient-blush-gold"
               >
                 <Mail className="h-4 w-4" />
+              </a>
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="grid h-10 w-10 place-items-center rounded-full border border-champagne-200/60 bg-white/70 text-[#128C7E] transition hover:bg-[#25D366] hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4" />
               </a>
             </div>
           </div>

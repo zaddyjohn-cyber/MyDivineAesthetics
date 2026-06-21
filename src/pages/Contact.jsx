@@ -10,9 +10,11 @@ import {
   Facebook,
   Calendar,
   Check,
+  MessageCircle,
 } from 'lucide-react';
 import PageHero from '../components/sections/PageHero.jsx';
 import { featuredServices } from '../data/services.js';
+import { whatsappLink } from '../data/contact.js';
 
 const hours = [
   { day: 'Monday', time: 'By appointment' },
@@ -174,6 +176,22 @@ export default function Contact() {
                         +1 (617) 943-0892
                       </a>
                       <p className="text-xs text-warmbrown-400">Call or text</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#25D366]/15">
+                      <MessageCircle className="h-4 w-4 text-[#128C7E]" />
+                    </span>
+                    <div>
+                      <a
+                        href={whatsappLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-warmbrown-700 transition hover:text-[#128C7E]"
+                      >
+                        Chat on WhatsApp
+                      </a>
+                      <p className="text-xs text-warmbrown-400">Fastest way to reach us</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">

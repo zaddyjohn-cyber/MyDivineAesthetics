@@ -4,6 +4,7 @@ import { Suspense, lazy } from 'react';
 import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import ScrollToTop from './components/layout/ScrollToTop.jsx';
+import WhatsAppFab from './components/widgets/WhatsAppFab.jsx';
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
@@ -49,6 +50,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      <WhatsAppFab />
     </div>
   );
 }
