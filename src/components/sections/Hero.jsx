@@ -1,8 +1,24 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Shield, Leaf, HeartHandshake, Stethoscope } from 'lucide-react';
 import BookButton from '../booking/BookButton.jsx';
 import CssDivineScene from '../3d/CssDivineScene.jsx';
+
+const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
+
+function useEnable3D() {
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator?.connection?.saveData;
+    if (!reducedMotion && !saveData) {
+      const t = window.setTimeout(() => setEnabled(true), 200);
+      return () => window.clearTimeout(t);
+    }
+  }, []);
+  return enabled;
+}
 
 function VideoOrb({ size }) {
   // mobile orb gets bigger relative to viewport; desktop orb keeps the original sizes
@@ -63,6 +79,7 @@ const badges = [
 ];
 
 export default function Hero() {
+  const enable3D = useEnable3D();
   return (
     <section className="relative overflow-hidden pt-28 pb-8 sm:pt-32 sm:pb-12">
       <div className="halo-glow -left-32 top-20 h-96 w-96 bg-champagne-100/60" />
@@ -153,9 +170,15 @@ export default function Hero() {
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              {/* Animated CSS orbit — compact on mobile, full on sm+ */}
+              {/* Divine orbit — CSS paints instantly, R3F upgrades after first frame */}
               <div className="relative h-[220px] sm:h-[600px] lg:h-[680px]">
-                <CssDivineScene />
+                {enable3D ? (
+                  <Suspense fallback={<CssDivineScene />}>
+                    <DivineScene />
+                  </Suspense>
+                ) : (
+                  <CssDivineScene />
+                )}
 
                 {/* Video orb — overlaid on the orbit at sm+ only */}
                 <motion.div
