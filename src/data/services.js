@@ -7,6 +7,8 @@ import {
   HeartPulse,
 } from 'lucide-react';
 
+const BASE = import.meta.env.BASE_URL;
+
 export const featuredServices = [
   {
     icon: Leaf,
@@ -14,6 +16,7 @@ export const featuredServices = [
     blurb:
       'Hydrating, brightening, and calming treatments designed to restore your skin’s natural glow.',
     href: '/services#skin',
+    media: { type: 'video', src: `${BASE}services/skin-care.mp4` },
   },
   {
     icon: Syringe,
@@ -21,6 +24,7 @@ export const featuredServices = [
     blurb:
       'Smooth fine lines and refresh your appearance with natural-looking injectable treatments.',
     href: '/services#injectables',
+    media: { type: 'image', src: `${BASE}services/botox.png` },
   },
   {
     icon: Sparkles,
@@ -28,6 +32,7 @@ export const featuredServices = [
     blurb:
       'Restore volume, enhance contours, and bring harmony to your natural features.',
     href: '/services#injectables',
+    media: { type: 'image', src: `${BASE}services/facial-balancing.jpg` },
   },
   {
     icon: Activity,
@@ -35,6 +40,7 @@ export const featuredServices = [
     blurb:
       'Personalized prescription-strength support for clearer, calmer, more confident skin.',
     href: '/services#acne',
+    media: { type: 'video', src: `${BASE}services/prescription-acne-care.mp4` },
   },
   {
     icon: Droplets,
@@ -42,6 +48,7 @@ export const featuredServices = [
     blurb:
       'Wellness-focused drips designed to support energy, glow, immunity, and recovery.',
     href: '/services#iv',
+    media: { type: 'image', src: `${BASE}services/iv-hydration.jpg` },
   },
   {
     icon: HeartPulse,
@@ -49,6 +56,7 @@ export const featuredServices = [
     blurb:
       'Guided wellness support to help you feel stronger, healthier, and more confident.',
     href: '/services#weight',
+    media: { type: 'image', src: `${BASE}services/medical-weight-loss.jpg` },
   },
 ];
 
