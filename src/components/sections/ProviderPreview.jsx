@@ -69,7 +69,7 @@ export default function ProviderPreview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="absolute -left-4 bottom-6 hidden rounded-2xl glass-card p-4 sm:block"
+                className="absolute -left-2 bottom-3 rounded-2xl glass-card p-3 sm:-left-4 sm:bottom-6 sm:p-4"
               >
                 <p className="text-[10px] uppercase tracking-[0.22em] text-champagne-500">
                   Nearly

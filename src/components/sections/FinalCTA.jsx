@@ -97,7 +97,7 @@ export default function FinalCTA() {
               </div>
 
               {/* Floating caption pill */}
-              <div className="absolute -bottom-3 left-1/2 hidden -translate-x-1/2 items-center gap-2 rounded-full border border-champagne-100/40 bg-warmbrown-700/70 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-cream-50 backdrop-blur lg:inline-flex">
+              <div className="absolute -bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-champagne-100/40 bg-warmbrown-700/70 px-3 py-1.5 text-[9px] uppercase tracking-[0.22em] text-cream-50 backdrop-blur sm:px-4 sm:py-2 sm:text-[10px]">
                 <Sparkles className="h-3 w-3 text-champagne-200" />
                 Relax · Restore · Glow
               </div>

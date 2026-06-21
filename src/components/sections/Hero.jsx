@@ -180,18 +180,18 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.7 }}
-                className="absolute left-4 bottom-6 z-10 hidden w-56 rounded-2xl glass-card p-4 sm:block"
+                className="absolute left-2 bottom-3 z-10 w-44 rounded-2xl glass-card p-3 sm:left-4 sm:bottom-6 sm:w-56 sm:p-4"
               >
-                <p className="text-[10px] uppercase tracking-[0.22em] text-champagne-500">
+                <p className="text-[9px] uppercase tracking-[0.22em] text-champagne-500 sm:text-[10px]">
                   Next available
                 </p>
-                <p className="mt-1 font-display text-lg text-warmbrown-700">
+                <p className="mt-1 font-display text-base text-warmbrown-700 sm:text-lg">
                   Divine Glow Facial
                 </p>
-                <p className="mt-1 text-xs text-warmbrown-500">Thursday · 11:30 AM</p>
+                <p className="mt-1 text-[11px] text-warmbrown-500 sm:text-xs">Thursday · 11:30 AM</p>
                 <Link
                   to="/contact"
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-warmbrown-700"
+                  className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-warmbrown-700 sm:mt-3 sm:text-xs"
                 >
                   Book session <ArrowRight className="h-3 w-3" />
                 </Link>
@@ -202,12 +202,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.7 }}
-                className="absolute right-2 top-10 z-10 hidden items-center gap-2 rounded-full glass-card px-4 py-2 text-xs text-warmbrown-700 sm:flex"
+                className="absolute right-2 top-4 z-10 flex items-center gap-1.5 rounded-full glass-card px-3 py-1.5 text-[10px] text-warmbrown-700 sm:top-10 sm:gap-2 sm:px-4 sm:py-2 sm:text-xs"
               >
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-gradient-gold">
-                  <Sparkles className="h-3 w-3 text-white" />
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-gradient-gold sm:h-6 sm:w-6">
+                  <Sparkles className="h-2.5 w-2.5 text-white sm:h-3 sm:w-3" />
                 </span>
-                DNP, FNP-C, PMHNP-BC
+                <span className="hidden sm:inline">DNP, FNP-C, PMHNP-BC</span>
+                <span className="sm:hidden">Nurse Practitioner</span>
               </motion.div>
             </motion.div>
           </div>

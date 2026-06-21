@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 /**
  * Video that defers loading until it scrolls into view.
- * Renders an empty <video> shell first, then swaps in `src` when the
- * IntersectionObserver fires. Keeps autoplay/muted/loop behavior intact.
+ * - Empty <video> shell first; src is set when the observer fires
+ * - Once src is set, we explicitly call load() and play() because
+ *   the `autoplay` attribute only triggers when src exists at mount.
  */
 export default function LazyVideo({ src, className = '', poster, ariaLabel }) {
   const ref = useRef(null);
@@ -19,10 +20,19 @@ export default function LazyVideo({ src, className = '', poster, ariaLabel }) {
           obs.disconnect();
         }
       },
-      { rootMargin: '200px' }
+      { rootMargin: '300px' }
     );
     obs.observe(el);
     return () => obs.disconnect();
+  }, [active]);
+
+  // Kick playback once the src is wired up
+  useEffect(() => {
+    if (!active || !ref.current) return;
+    const el = ref.current;
+    el.load();
+    const p = el.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
   }, [active]);
 
   return (
