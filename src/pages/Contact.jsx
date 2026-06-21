@@ -265,17 +265,16 @@ export default function Contact() {
                 <p className="mt-3 font-display text-2xl leading-tight text-warmbrown-700">
                   A calm, private, luxury studio.
                 </p>
-                <div className="mt-5 aspect-[5/3] w-full rounded-2xl border border-white/60 bg-[radial-gradient(ellipse_at_top_left,_rgba(239,217,177,0.6),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(243,219,210,0.55),_transparent_55%)]">
-                  <div className="grid h-full place-items-center">
-                    <div className="text-center">
-                      <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-gold text-warmbrown-700 mx-auto shadow-soft">
-                        <MapPin className="h-5 w-5" />
-                      </span>
-                      <p className="mt-3 text-xs uppercase tracking-[0.24em] text-warmbrown-500">
-                        Map preview
-                      </p>
-                    </div>
-                  </div>
+                <div className="mt-5 overflow-hidden rounded-2xl border border-white/60 shadow-soft">
+                  <iframe
+                    title="My Divine Aesthetics — studio location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792330.0623990225!2d-76.73740095000001!3d39.128336999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0083feb5a6e7f5%3A0x73f48ae25a9b0c5e!2sMy%20Divine%20Aesthetics!5e0!3m2!1sen!2sng!4v1782054124100!5m2!1sen!2sng"
+                    className="block aspect-[5/3] w-full"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>
