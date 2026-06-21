@@ -27,7 +27,7 @@ const linkGroups = [
 
 export default function Footer() {
   return (
-    <footer className="relative mt-32 overflow-hidden">
+    <footer className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-cream-100/40 to-cream-200/60" />
       <div className="halo-glow left-1/2 top-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/70" />
 
@@ -109,7 +109,9 @@ export default function Footer() {
 
             <ul className="mt-6 space-y-3 text-sm text-warmbrown-500">
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-champagne-500" /> (555) 010-2025
+                <a href="tel:+16179430892" className="inline-flex items-center gap-3 transition hover:text-warmbrown-700">
+                  <Phone className="h-4 w-4 text-champagne-500" /> +1 (617) 943-0892
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-champagne-500" /> By appointment only

@@ -170,7 +170,9 @@ export default function Contact() {
                       <Phone className="h-4 w-4 text-warmbrown-700" />
                     </span>
                     <div>
-                      <p className="font-medium text-warmbrown-700">(555) 010-2025</p>
+                      <a href="tel:+16179430892" className="font-medium text-warmbrown-700 transition hover:text-warmbrown-500">
+                        +1 (617) 943-0892
+                      </a>
                       <p className="text-xs text-warmbrown-400">Call or text</p>
                     </div>
                   </li>
