@@ -117,15 +117,15 @@ export default function Hero() {
                 className="pointer-events-none absolute left-1/2 top-1/2 z-[5] -translate-x-1/2 -translate-y-1/2"
                 aria-hidden="true"
               >
-                <div className="relative h-[210px] w-[210px] sm:h-[260px] sm:w-[260px] lg:h-[300px] lg:w-[300px]">
+                <div className="relative h-[320px] w-[320px] sm:h-[440px] sm:w-[440px] lg:h-[540px] lg:w-[540px]">
                   {/* Outer gold halo glow */}
-                  <div className="absolute -inset-6 rounded-full bg-gradient-gold opacity-50 blur-2xl animate-glow" />
+                  <div className="absolute -inset-8 rounded-full bg-gradient-gold opacity-50 blur-3xl animate-glow" />
                   {/* Gold ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-gold opacity-90" />
                   {/* Cream gap */}
-                  <div className="absolute inset-[3px] rounded-full bg-cream-50/40 backdrop-blur-sm" />
+                  <div className="absolute inset-[4px] rounded-full bg-cream-50/40 backdrop-blur-sm" />
                   {/* Video well — circular mask */}
-                  <div className="absolute inset-[8px] overflow-hidden rounded-full ring-1 ring-inset ring-white/40 shadow-halo">
+                  <div className="absolute inset-[11px] overflow-hidden rounded-full ring-1 ring-inset ring-white/40 shadow-halo">
                     <video
                       src={`${import.meta.env.BASE_URL}divine-hero.mp4`}
                       autoPlay
@@ -143,11 +143,11 @@ export default function Hero() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-warmbrown-700/40 via-transparent to-cream-50/10" />
 
                     {/* Blinking brand overlay — covers any original watermark at the bottom */}
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 bg-gradient-to-t from-warmbrown-700/95 via-warmbrown-700/70 to-transparent px-3 pb-4 pt-6 text-center">
-                      <p className="animate-brand-blink font-display text-[15px] leading-tight text-cream-50 sm:text-[17px]">
+                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1.5 bg-gradient-to-t from-warmbrown-700/95 via-warmbrown-700/70 to-transparent px-4 pb-6 pt-10 text-center sm:gap-2 sm:pb-8 sm:pt-14">
+                      <p className="animate-brand-blink font-display text-[22px] leading-tight text-cream-50 sm:text-[30px] lg:text-[36px]">
                         My Divine <span className="italic gold-text">Aesthetics</span>
                       </p>
-                      <p className="animate-brand-blink text-[8px] uppercase tracking-[0.32em] text-champagne-100 sm:text-[9px]">
+                      <p className="animate-brand-blink text-[10px] uppercase tracking-[0.32em] text-champagne-100 sm:text-[12px] lg:text-[13px]">
                         Sacred · Self · Care
                       </p>
                     </div>
