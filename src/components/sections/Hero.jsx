@@ -10,13 +10,12 @@ const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
 function useEnable3D() {
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
-    const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Save bandwidth: respect Save-Data hint when present
     const saveData = navigator?.connection?.saveData;
-    if (isDesktop && !reducedMotion && !saveData) {
-      // Defer to next tick so first paint shows the CSS scene immediately
-      const t = window.setTimeout(() => setEnabled(true), 300);
+    if (!reducedMotion && !saveData) {
+      // Defer one frame so first paint shows the CSS scene instantly,
+      // then upgrade to the live 3D scene in the background.
+      const t = window.setTimeout(() => setEnabled(true), 200);
       return () => window.clearTimeout(t);
     }
   }, []);
