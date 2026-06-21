@@ -67,13 +67,6 @@ export default function FeaturedServices() {
                   {/* Bottom fade into card body */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/90 to-transparent" />
 
-                  {/* Category pill */}
-                  <div className="absolute left-4 top-4">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-warmbrown-600 backdrop-blur">
-                      Signature
-                    </span>
-                  </div>
-
                   {/* Arrow chip */}
                   <div className="absolute right-4 top-4">
                     <span className="grid h-10 w-10 place-items-center rounded-full border border-white/60 bg-white/70 text-warmbrown-600 backdrop-blur transition-transform duration-500 group-hover:rotate-45 group-hover:bg-gradient-gold group-hover:text-warmbrown-700">
