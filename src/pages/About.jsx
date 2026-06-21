@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import PageHero from '../components/sections/PageHero.jsx';
 import SectionHeader from '../components/sections/SectionHeader.jsx';
-import FloatingOrbs from '../components/3d/FloatingOrbs.jsx';
+import CssDivineScene from '../components/3d/CssDivineScene.jsx';
 import FinalCTA from '../components/sections/FinalCTA.jsx';
 
 const values = [
@@ -107,7 +107,7 @@ export default function About() {
 
             <div className="relative">
               <div className="relative overflow-hidden rounded-[36px] border border-white/60 bg-gradient-to-br from-blush-50 via-champagne-50 to-cream-100 p-8">
-                <FloatingOrbs className="absolute inset-0 h-full w-full" />
+                <CssDivineScene className="absolute inset-0 h-full w-full" />
                 <div className="relative">
                   <p className="text-[11px] uppercase tracking-[0.24em] text-champagne-500">
                     Brand Promise
@@ -141,7 +141,7 @@ export default function About() {
             <div className="halo-glow -left-20 -bottom-20 h-72 w-72 bg-rose-100/55" />
             <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
               <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[32px] bg-gradient-to-br from-warmbrown-600 via-warmbrown-500 to-warmbrown-400">
-                <FloatingOrbs className="absolute inset-0 h-full w-full" />
+                <CssDivineScene className="absolute inset-0 h-full w-full" />
                 <div className="absolute inset-0 grid place-items-center text-center">
                   <div>
                     <div className="mx-auto h-32 w-32 rounded-full bg-gradient-gold opacity-90 blur-2xl" />

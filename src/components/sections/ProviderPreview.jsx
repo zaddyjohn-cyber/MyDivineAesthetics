@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Quote, ArrowRight } from 'lucide-react';
-import FloatingOrbs from '../3d/FloatingOrbs.jsx';
+import CssDivineScene from '../3d/CssDivineScene.jsx';
 
 export default function ProviderPreview() {
   return (
@@ -50,7 +50,7 @@ export default function ProviderPreview() {
                 {/* Soft gradient portrait placeholder with floating 3D orbs */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blush-100 via-champagne-50 to-cream-100" />
                 <div className="absolute inset-0">
-                  <FloatingOrbs className="h-full w-full" />
+                  <CssDivineScene className="h-full w-full" />
                 </div>
                 <div className="absolute inset-0 grid place-items-center">
                   <div className="text-center">
