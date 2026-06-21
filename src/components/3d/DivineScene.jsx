@@ -94,12 +94,12 @@ function useDeviceTier() {
   return tier;
 }
 
-export default function DivineScene({ compact = false }) {
+export default function DivineScene() {
   const tier = useDeviceTier();
   const maxDpr = tier === 'mobile' ? 1.25 : tier === 'tablet' ? 1.5 : 2;
 
   return (
-    <div className={`relative ${compact ? 'h-[420px]' : 'h-[520px] sm:h-[600px] lg:h-[680px]'} w-full`}>
+    <div className="relative h-full w-full">
       <Canvas
         dpr={[1, maxDpr]}
         gl={{ antialias: tier !== 'mobile', alpha: true, powerPreference: 'high-performance' }}

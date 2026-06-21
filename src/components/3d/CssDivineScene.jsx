@@ -6,7 +6,7 @@
 export default function CssDivineScene({ className = '' }) {
   return (
     <div
-      className={`relative h-[420px] w-full sm:h-[520px] lg:h-[680px] ${className}`}
+      className={`relative h-full w-full ${className}`}
       aria-hidden="true"
     >
       {/* Rose-gold ambient glow */}
