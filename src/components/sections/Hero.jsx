@@ -16,8 +16,8 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-28 pb-8 sm:pt-32 sm:pb-12">
       <div className="halo-glow -left-32 top-20 h-96 w-96 bg-champagne-100/60" />
-      <div className="halo-glow -right-20 top-40 h-80 w-80 bg-blush-100/70" />
-      <div className="halo-glow left-1/2 bottom-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/60" />
+      <div className="halo-glow -right-20 top-40 h-80 w-80 bg-rose-200/55" />
+      <div className="halo-glow left-1/2 bottom-0 h-72 w-72 -translate-x-1/2 bg-rose-100/60" />
 
       <div className="container-luxe">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">

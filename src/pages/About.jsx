@@ -138,6 +138,7 @@ export default function About() {
         <div className="container-luxe">
           <div className="relative overflow-hidden rounded-[36px] border border-white/60 bg-white/55 p-8 backdrop-blur-xl sm:p-14">
             <div className="halo-glow -right-20 -top-20 h-72 w-72 bg-champagne-100/70" />
+            <div className="halo-glow -left-20 -bottom-20 h-72 w-72 bg-rose-100/55" />
             <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
               <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[32px] bg-gradient-to-br from-warmbrown-600 via-warmbrown-500 to-warmbrown-400">
                 <FloatingOrbs className="absolute inset-0 h-full w-full" />

@@ -9,6 +9,8 @@ export default function GalleryPreview() {
   const items = galleryItems.slice(0, 6);
   return (
     <section className="relative py-12 sm:py-16">
+      <div className="halo-glow left-1/4 top-0 h-72 w-72 bg-rose-100/55" />
+      <div className="halo-glow right-0 bottom-1/4 h-80 w-80 bg-champagne-100/60" />
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Inside the Studio"

@@ -28,8 +28,8 @@ body {
 body {
   background-image:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(239, 217, 177, 0.45), transparent 60%),
-    radial-gradient(ellipse 60% 40% at 100% 30%, rgba(243, 219, 210, 0.35), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(239, 217, 177, 0.3), transparent 70%);
+    radial-gradient(ellipse 60% 40% at 100% 30%, rgba(248, 216, 222, 0.45), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(240, 179, 189, 0.28), transparent 70%);
   background-attachment: fixed;
 }
 
@@ -79,6 +79,13 @@ body {
 
   .gold-text {
     background: linear-gradient(135deg, #c69753 0%, #efd9b1 40%, #b8843d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .rose-text {
+    background: linear-gradient(135deg, #e58c9d 0%, #f0b3bd 50%, #d9a18f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -146,7 +153,7 @@ body {
 
   .divider-gold {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(184, 132, 61, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(229, 140, 157, 0.35), rgba(184, 132, 61, 0.5), rgba(229, 140, 157, 0.35), transparent);
   }
 
   .halo-glow {

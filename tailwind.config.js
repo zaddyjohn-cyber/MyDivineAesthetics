@@ -25,6 +25,13 @@ export default {
           200: '#E8C0B3',
           300: '#D9A18F',
         },
+        rose: {
+          50: '#FCEEF1',
+          100: '#F8D8DE',
+          200: '#F0B3BD',
+          300: '#E58C9D',
+          400: '#D66B82',
+        },
         nude: {
           100: '#F0DFCE',
           200: '#E2C7AE',
@@ -49,7 +56,8 @@ export default {
       backgroundImage: {
         'gradient-divine': 'linear-gradient(135deg, #FBF7F1 0%, #F7EBD2 40%, #FBEFEB 100%)',
         'gradient-gold': 'linear-gradient(135deg, #EFD9B1 0%, #D4AC70 50%, #B8843D 100%)',
-        'gradient-blush-gold': 'linear-gradient(135deg, #F3DBD2 0%, #EFD9B1 100%)',
+        'gradient-blush-gold': 'linear-gradient(135deg, #F8D8DE 0%, #EFD9B1 100%)',
+        'gradient-rose-gold': 'linear-gradient(135deg, #F8D8DE 0%, #F0B3BD 35%, #EFD9B1 75%, #D4AC70 100%)',
         'gradient-radial': 'radial-gradient(ellipse at top, rgba(239, 217, 177, 0.4), transparent 60%)',
       },
       animation: {

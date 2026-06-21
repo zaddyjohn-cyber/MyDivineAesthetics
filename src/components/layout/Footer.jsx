@@ -31,6 +31,8 @@ export default function Footer() {
     <footer className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-cream-100/40 to-cream-200/60" />
       <div className="halo-glow left-1/2 top-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/70" />
+      <div className="halo-glow left-10 bottom-10 h-60 w-60 bg-rose-100/50" />
+      <div className="halo-glow right-10 top-1/2 h-60 w-60 bg-rose-200/35" />
 
       <div className="container-luxe pt-20 pb-10">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">

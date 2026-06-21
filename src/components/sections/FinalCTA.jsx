@@ -33,8 +33,8 @@ export default function FinalCTA() {
         >
           {/* Soft glowing accents */}
           <div className="pointer-events-none absolute -left-20 top-0 h-96 w-96 rounded-full bg-champagne-300/30 blur-3xl" />
-          <div className="pointer-events-none absolute -right-10 bottom-0 h-80 w-80 rounded-full bg-blush-200/25 blur-3xl" />
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-champagne-200/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-10 bottom-0 h-80 w-80 rounded-full bg-rose-300/35 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-200/20 blur-3xl" />
 
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.85fr_1fr] lg:gap-12">
             {/* Left: copy + buttons */}

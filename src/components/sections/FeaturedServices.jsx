@@ -38,6 +38,8 @@ function ServiceMedia({ media, title }) {
 export default function FeaturedServices() {
   return (
     <section id="services" className="relative py-12 sm:py-16">
+      <div className="halo-glow -left-10 top-10 h-72 w-72 bg-rose-100/55" />
+      <div className="halo-glow -right-10 bottom-20 h-80 w-80 bg-rose-200/40" />
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Signature Services"

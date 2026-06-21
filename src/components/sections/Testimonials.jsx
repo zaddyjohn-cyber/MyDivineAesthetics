@@ -7,6 +7,8 @@ export default function Testimonials() {
   return (
     <section className="relative py-12 sm:py-16">
       <div className="halo-glow left-1/2 top-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/60" />
+      <div className="halo-glow left-0 bottom-1/4 h-64 w-64 bg-rose-100/55" />
+      <div className="halo-glow right-0 top-1/4 h-64 w-64 bg-rose-200/40" />
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Client Love"
