@@ -7,7 +7,7 @@ import { galleryItems } from '../../data/testimonials.js';
 export default function GalleryPreview() {
   const items = galleryItems.slice(0, 6);
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-12 sm:py-16">
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Results"

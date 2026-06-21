@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function PageHero({ eyebrow, title, subtitle, children }) {
   return (
-    <section className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-20">
+    <section className="relative overflow-hidden pt-28 pb-8 sm:pt-32 sm:pb-12">
       <div className="halo-glow -left-32 top-20 h-96 w-96 bg-champagne-100/60" />
       <div className="halo-glow -right-20 top-40 h-80 w-80 bg-blush-100/70" />
 

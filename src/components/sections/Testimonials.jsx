@@ -5,7 +5,7 @@ import { testimonials } from '../../data/testimonials.js';
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-12 sm:py-16">
       <div className="halo-glow left-1/2 top-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/60" />
       <div className="container-luxe">
         <SectionHeader

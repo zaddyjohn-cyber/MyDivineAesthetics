@@ -22,7 +22,7 @@ const highlights = [
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-12 sm:py-16">
       <div className="container-luxe">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -86,7 +86,7 @@ export default function FinalCTA() {
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   {/* Subtle vignette so the video blends into the card */}

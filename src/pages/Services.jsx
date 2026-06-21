@@ -23,7 +23,7 @@ function PriceRow({ name, price, highlight }) {
 function ServiceCategory({ category, index }) {
   const flip = index % 2 === 1;
   return (
-    <section id={category.id} className="relative py-16 sm:py-24">
+    <section id={category.id} className="relative py-10 sm:py-14">
       <div className="container-luxe">
         <div
           className={`grid items-start gap-10 lg:grid-cols-[1fr_1.05fr] ${

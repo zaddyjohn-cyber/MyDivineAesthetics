@@ -63,7 +63,7 @@ export default function About() {
       />
 
       {/* Brand story */}
-      <section className="relative py-16 sm:py-24">
+      <section className="relative py-10 sm:py-14">
         <div className="container-luxe">
           <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_1fr]">
             <div>
@@ -134,7 +134,7 @@ export default function About() {
       </section>
 
       {/* Founder */}
-      <section className="relative py-16 sm:py-24">
+      <section className="relative py-10 sm:py-14">
         <div className="container-luxe">
           <div className="relative overflow-hidden rounded-[36px] border border-white/60 bg-white/55 p-8 backdrop-blur-xl sm:p-14">
             <div className="halo-glow -right-20 -top-20 h-72 w-72 bg-champagne-100/70" />
@@ -192,7 +192,7 @@ export default function About() {
       </section>
 
       {/* Philosophy / Mission */}
-      <section className="relative py-16 sm:py-24">
+      <section className="relative py-10 sm:py-14">
         <div className="container-luxe">
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="rounded-3xl glass-card gold-border p-8 sm:p-10">
@@ -225,7 +225,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="relative py-16 sm:py-24">
+      <section className="relative py-10 sm:py-14">
         <div className="container-luxe">
           <SectionHeader
             eyebrow="Our Values"

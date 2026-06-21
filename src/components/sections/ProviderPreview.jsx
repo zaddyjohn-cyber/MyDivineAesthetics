@@ -5,7 +5,7 @@ import FloatingOrbs from '../3d/FloatingOrbs.jsx';
 
 export default function ProviderPreview() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-12 sm:py-16">
       <div className="container-luxe">
         <div className="relative overflow-hidden rounded-[36px] border border-white/60 bg-gradient-to-br from-cream-50/90 via-blush-50/70 to-champagne-50/90 p-8 shadow-soft backdrop-blur-xl sm:p-14">
           <div className="halo-glow -left-20 -top-20 h-72 w-72 bg-champagne-100/80" />

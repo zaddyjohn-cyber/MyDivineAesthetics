@@ -1,7 +1,9 @@
+import { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Shield, Leaf, HeartHandshake, Stethoscope } from 'lucide-react';
-import DivineScene from '../3d/DivineScene.jsx';
+
+const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
 
 const badges = [
   { icon: Stethoscope, label: 'Nurse Practitioner-Led Care' },
@@ -12,7 +14,7 @@ const badges = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
+    <section className="relative overflow-hidden pt-28 pb-8 sm:pt-32 sm:pb-12">
       <div className="halo-glow -left-32 top-20 h-96 w-96 bg-champagne-100/60" />
       <div className="halo-glow -right-20 top-40 h-80 w-80 bg-blush-100/70" />
       <div className="halo-glow left-1/2 bottom-0 h-72 w-72 -translate-x-1/2 bg-champagne-100/60" />
@@ -103,7 +105,9 @@ export default function Hero() {
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <DivineScene />
+              <Suspense fallback={<div className="h-[520px] w-full sm:h-[600px] lg:h-[680px]" />}>
+                <DivineScene />
+              </Suspense>
 
               {/* Video orb infused inside the divine globe */}
               <motion.div
@@ -128,13 +132,17 @@ export default function Hero() {
                       muted
                       loop
                       playsInline
-                      preload="metadata"
-                      className="h-full w-full object-cover"
+                      preload="none"
+                      className="h-full w-full object-cover scale-[1.35] origin-center"
                     />
-                    {/* Soft inner vignette so the video blends with the divine palette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-warmbrown-700/40 via-transparent to-cream-50/10" />
+                    {/* Side masks — heavily blurred edges to hide any source watermark on the sides */}
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-warmbrown-700/75 via-warmbrown-700/35 to-transparent backdrop-blur-[2px]" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-warmbrown-700/55 via-warmbrown-700/25 to-transparent backdrop-blur-[2px]" />
 
-                    {/* Blinking brand overlay — covers any original watermark */}
+                    {/* Soft inner vignette so the video blends with the divine palette */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-warmbrown-700/40 via-transparent to-cream-50/10" />
+
+                    {/* Blinking brand overlay — covers any original watermark at the bottom */}
                     <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 bg-gradient-to-t from-warmbrown-700/95 via-warmbrown-700/70 to-transparent px-3 pb-4 pt-6 text-center">
                       <p className="animate-brand-blink font-display text-[15px] leading-tight text-cream-50 sm:text-[17px]">
                         My Divine <span className="italic gold-text">Aesthetics</span>

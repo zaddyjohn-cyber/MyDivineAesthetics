@@ -31,7 +31,7 @@ const pillars = [
 
 export default function DivineApproach() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-12 sm:py-16">
       <div className="halo-glow left-0 top-20 h-72 w-72 bg-blush-100/60" />
       <div className="halo-glow right-0 bottom-0 h-80 w-80 bg-champagne-100/60" />
 

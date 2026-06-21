@@ -6,7 +6,7 @@ import { featuredServices } from '../../data/services.js';
 
 export default function FeaturedServices() {
   return (
-    <section id="services" className="relative py-24 sm:py-32">
+    <section id="services" className="relative py-12 sm:py-16">
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Signature Services"
