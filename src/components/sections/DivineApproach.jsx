@@ -1,38 +1,38 @@
 import { motion } from 'framer-motion';
 import { Stethoscope, Leaf, HeartHandshake, Sparkles } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
-import {
-  MedicalPrecisionArt,
-  NaturalBeautyArt,
-  WholePersonArt,
-  ConfidenceArt,
-} from '../illustrations/PillarArt.jsx';
+
+const BASE = import.meta.env.BASE_URL;
 
 const pillars = [
   {
     icon: Stethoscope,
-    Art: MedicalPrecisionArt,
+    image: `${BASE}pillars/medical-precision.jpg`,
+    alt: 'Clinical aesthetic treatment representing medical precision',
     title: 'Medical Precision',
     body:
       'Every treatment is rooted in clinical training, safety, and an artist’s sense of proportion. Nothing rushed. Nothing guessed.',
   },
   {
     icon: Leaf,
-    Art: NaturalBeautyArt,
+    image: `${BASE}pillars/natural-beauty.jpg`,
+    alt: 'Soft natural beauty inspiration',
     title: 'Natural Beauty',
     body:
       'We don’t change who you are. We refine, soften, and enhance — so the result still looks like the most rested version of you.',
   },
   {
     icon: HeartHandshake,
-    Art: WholePersonArt,
+    image: `${BASE}pillars/whole-person-wellness.jpg`,
+    alt: 'Whole-person wellness imagery',
     title: 'Whole-Person Wellness',
     body:
       'From IV hydration to weight loss support, your skin and your wellness are treated as one — because they are.',
   },
   {
     icon: Sparkles,
-    Art: ConfidenceArt,
+    image: `${BASE}pillars/confidence-self-love.jpg`,
+    alt: 'Confidence and self-love imagery',
     title: 'Confidence & Self-Love',
     body:
       'You leave seen, heard, and lit from within. Care that honors your worth, not just your appearance.',
@@ -59,7 +59,6 @@ export default function DivineApproach() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => {
             const Icon = p.icon;
-            const Art = p.Art;
             return (
               <motion.article
                 key={p.title}
@@ -70,17 +69,24 @@ export default function DivineApproach() {
                 whileHover={{ y: -6 }}
                 className="group relative overflow-hidden rounded-3xl glass-card gold-border"
               >
-                {/* Illustrated header */}
-                <div className="relative h-36 overflow-hidden bg-gradient-to-br from-cream-50 via-blush-50 to-champagne-50 sm:h-40">
-                  <div className="halo-glow -right-10 -top-10 h-32 w-32 bg-champagne-100/80" />
-                  <Art className="absolute inset-0 h-full w-full" />
-                  {/* Soft bottom fade so the illustration meets the card body smoothly */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/70 to-transparent" />
+                {/* Image header */}
+                <div className="relative h-44 overflow-hidden sm:h-48">
+                  <img
+                    src={p.image}
+                    alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Champagne tint for brand cohesion */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-champagne-100/10 via-transparent to-white/40 mix-blend-multiply" />
+                  {/* Soft bottom fade so the image meets the card body smoothly */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/85 to-transparent" />
                 </div>
 
                 {/* Body */}
                 <div className="relative p-6 sm:p-7">
-                  <span className="absolute -top-6 right-6 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold text-warmbrown-700 shadow-soft ring-4 ring-white/70">
+                  <span className="absolute -top-6 right-6 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold text-warmbrown-700 shadow-soft ring-4 ring-white/80">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-2xl text-warmbrown-700">{p.title}</h3>
