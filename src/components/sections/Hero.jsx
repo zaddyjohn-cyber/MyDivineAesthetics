@@ -1,10 +1,27 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Shield, Leaf, HeartHandshake, Stethoscope } from 'lucide-react';
 import BookButton from '../booking/BookButton.jsx';
+import CssDivineScene from '../3d/CssDivineScene.jsx';
 
 const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
+
+function useEnable3D() {
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Save bandwidth: respect Save-Data hint when present
+    const saveData = navigator?.connection?.saveData;
+    if (isDesktop && !reducedMotion && !saveData) {
+      // Defer to next tick so first paint shows the CSS scene immediately
+      const t = window.setTimeout(() => setEnabled(true), 300);
+      return () => window.clearTimeout(t);
+    }
+  }, []);
+  return enabled;
+}
 
 const badges = [
   { icon: Stethoscope, label: 'Nurse Practitioner-Led Care' },
@@ -14,6 +31,7 @@ const badges = [
 ];
 
 export default function Hero() {
+  const enable3D = useEnable3D();
   return (
     <section className="relative overflow-hidden pt-28 pb-8 sm:pt-32 sm:pb-12">
       <div className="halo-glow -left-32 top-20 h-96 w-96 bg-champagne-100/60" />
@@ -104,9 +122,13 @@ export default function Hero() {
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <Suspense fallback={<div className="h-[520px] w-full sm:h-[600px] lg:h-[680px]" />}>
-                <DivineScene />
-              </Suspense>
+              {enable3D ? (
+                <Suspense fallback={<CssDivineScene />}>
+                  <DivineScene />
+                </Suspense>
+              ) : (
+                <CssDivineScene />
+              )}
 
               {/* Video orb infused inside the divine globe */}
               <motion.div

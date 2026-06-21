@@ -72,7 +72,7 @@ export const blogPosts = [
 
 const BASE = import.meta.env.BASE_URL;
 const UNSPLASH = (id) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=80`;
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=600&q=70`;
 
 export const galleryItems = [
   {
