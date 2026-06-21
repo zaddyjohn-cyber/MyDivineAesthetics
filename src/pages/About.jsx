@@ -140,16 +140,33 @@ export default function About() {
             <div className="halo-glow -right-20 -top-20 h-72 w-72 bg-champagne-100/70" />
             <div className="halo-glow -left-20 -bottom-20 h-72 w-72 bg-rose-100/55" />
             <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
-              <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[32px] bg-gradient-to-br from-warmbrown-600 via-warmbrown-500 to-warmbrown-400">
-                <CssDivineScene className="absolute inset-0 h-full w-full" />
-                <div className="absolute inset-0 grid place-items-center text-center">
-                  <div>
-                    <div className="mx-auto h-32 w-32 rounded-full bg-gradient-gold opacity-90 blur-2xl" />
-                    <p className="mt-4 font-display text-4xl text-cream-50">Imani Bryan</p>
-                    <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-champagne-200">
+              <div className="relative mx-auto w-full max-w-md">
+                {/* Gold halo glow */}
+                <div className="pointer-events-none absolute inset-0 -m-6 rounded-[40px] bg-gradient-rose-gold opacity-45 blur-2xl" />
+
+                <div className="relative aspect-square overflow-hidden rounded-[32px] shadow-halo">
+                  <div className="absolute inset-0 bg-gradient-to-br from-warmbrown-600 via-warmbrown-500 to-warmbrown-400" />
+                  <img
+                    src={`${import.meta.env.BASE_URL}imani.jpg`}
+                    alt="Imani Bryan, DNP, FNP-C, PMHNP-BC — founder of My Divine Aesthetics"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    style={{ filter: 'saturate(1.05) contrast(1.02)' }}
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-champagne-100/15 via-transparent to-blush-100/20 mix-blend-multiply" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(58,39,25,0.3)_100%)]" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-warmbrown-700/75 via-warmbrown-700/15 to-transparent" />
+
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-center sm:p-7">
+                    <p className="font-display text-4xl text-cream-50 drop-shadow">Imani Bryan</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-champagne-100">
                       DNP, FNP-C, PMHNP-BC
                     </p>
                   </div>
+
+                  <div className="pointer-events-none absolute inset-0 rounded-[32px] ring-1 ring-inset ring-white/40" />
+                  <div className="pointer-events-none absolute inset-[3px] rounded-[29px] ring-1 ring-inset ring-champagne-300/40" />
                 </div>
               </div>
 

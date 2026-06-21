@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Quote, ArrowRight } from 'lucide-react';
-import CssDivineScene from '../3d/CssDivineScene.jsx';
 
 export default function ProviderPreview() {
   return (
@@ -46,22 +45,43 @@ export default function ProviderPreview() {
             </div>
 
             <div className="relative">
-              <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[36px]">
-                {/* Soft gradient portrait placeholder with floating 3D orbs */}
+              {/* Soft gold halo behind the portrait */}
+              <div className="pointer-events-none absolute inset-0 -m-6 rounded-[44px] bg-gradient-rose-gold opacity-40 blur-2xl" />
+
+              <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[36px] shadow-halo">
+                {/* Brand-tone backdrop in case the image is still loading */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blush-100 via-champagne-50 to-cream-100" />
-                <div className="absolute inset-0">
-                  <CssDivineScene className="h-full w-full" />
+
+                {/* Real portrait */}
+                <img
+                  src={`${import.meta.env.BASE_URL}imani.jpg`}
+                  alt="Imani Bryan, DNP, FNP-C, PMHNP-BC — founder of My Divine Aesthetics"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                  style={{ filter: 'saturate(1.05) contrast(1.02)' }}
+                />
+
+                {/* Soft warm tint to unify with the brand palette */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-champagne-100/15 via-transparent to-blush-100/20 mix-blend-multiply" />
+
+                {/* Vignette so the background fades into the brand mood */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(58,39,25,0.25)_100%)]" />
+
+                {/* Bottom caption gradient */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-warmbrown-700/65 via-warmbrown-700/15 to-transparent" />
+
+                {/* Founder caption */}
+                <div className="absolute inset-x-0 bottom-0 p-5 text-center sm:p-6">
+                  <p className="font-display text-3xl text-cream-50 drop-shadow">Imani Bryan</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-champagne-100">
+                    Founder · Nurse Practitioner
+                  </p>
                 </div>
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <div className="mx-auto h-28 w-28 rounded-full bg-gradient-gold opacity-80 blur-2xl" />
-                    <p className="mt-4 font-display text-3xl text-warmbrown-700">Imani</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.3em] text-champagne-500">
-                      Founder · Nurse Practitioner
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/40" />
+
+                {/* Gold inner ring frame */}
+                <div className="pointer-events-none absolute inset-0 rounded-[36px] ring-1 ring-inset ring-white/40" />
+                <div className="pointer-events-none absolute inset-[3px] rounded-[33px] ring-1 ring-inset ring-champagne-300/40" />
               </div>
 
               <motion.div
