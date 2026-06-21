@@ -70,6 +70,7 @@ export const blogPosts = [
   },
 ];
 
+const BASE = import.meta.env.BASE_URL;
 const UNSPLASH = (id) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=80`;
 
@@ -78,54 +79,54 @@ export const galleryItems = [
     category: 'Skin Care',
     label: 'The Divine Glow Facial',
     caption: 'A calm, sensory ritual designed to leave skin lit from within.',
-    image: UNSPLASH('1570172619644-dfd03ed5d881'),
+    media: { type: 'image', src: UNSPLASH('1570172619644-dfd03ed5d881') },
   },
   {
     category: 'Injectables',
     label: 'Refined Botox Refresh',
     caption: 'Subtle, artful tweaks that soften — never freeze — expression.',
-    image: UNSPLASH('1555820585-c5ae44394b79'),
+    media: { type: 'image', src: UNSPLASH('1555820585-c5ae44394b79') },
   },
   {
     category: 'Acne Care',
     label: 'Personalized Acne Program',
     caption: 'Medical-grade protocols, monthly check-ins, real-life progress.',
-    image: UNSPLASH('1674739375749-7efe56fc8bbb'),
+    media: { type: 'image', src: `${BASE}gallery/personalized-acne-program.jpg` },
   },
   {
     category: 'Facial Balancing',
     label: 'Lip & Chin Harmony',
     caption: 'Quiet rebalancing that honors your natural proportions.',
-    image: UNSPLASH('1581182800629-7d90925ad072'),
+    media: { type: 'image', src: UNSPLASH('1581182800629-7d90925ad072') },
   },
   {
     category: 'Wellness',
     label: 'The Divine Glow Drip',
     caption: 'Vitamin-rich hydration for radiance, recovery, and clarity.',
-    image: UNSPLASH('1552693673-1bf958298935'),
+    media: { type: 'image', src: UNSPLASH('1552693673-1bf958298935') },
   },
   {
     category: 'Skin Care',
     label: 'Radiance Renewal Peel',
     caption: 'A custom chemistry brightens dullness and reveals fresh skin.',
-    image: UNSPLASH('1585945037805-5fd82c2e60b1'),
+    media: { type: 'video', src: `${BASE}gallery/radiance-renewal-peel.mp4` },
   },
   {
     category: 'Injectables',
     label: 'Soft Refresh — Crow’s Feet',
     caption: 'A gentle smoothing that keeps your smile entirely yours.',
-    image: UNSPLASH('1580870069867-74c57ee1bb07'),
+    media: { type: 'image', src: UNSPLASH('1580870069867-74c57ee1bb07') },
   },
   {
     category: 'Acne Care',
     label: 'Calm & Clear Plan',
     caption: 'Designed for inflamed, hormonal, and cystic skin journeys.',
-    image: UNSPLASH('1581182815808-b6eb627a8798'),
+    media: { type: 'image', src: UNSPLASH('1581182815808-b6eb627a8798') },
   },
   {
     category: 'Wellness',
     label: 'Inside the Studio',
     caption: 'A private, considered space made for sacred self-care.',
-    image: UNSPLASH('1573461160327-b450ce3d8e7f'),
+    media: { type: 'image', src: UNSPLASH('1573461160327-b450ce3d8e7f') },
   },
 ];

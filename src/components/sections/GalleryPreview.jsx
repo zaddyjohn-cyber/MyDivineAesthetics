@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
+import GalleryMedia from '../gallery/GalleryMedia.jsx';
 import { galleryItems } from '../../data/testimonials.js';
 
 export default function GalleryPreview() {
@@ -31,11 +32,9 @@ export default function GalleryPreview() {
               className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/65 backdrop-blur-xl"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={g.image}
+                <GalleryMedia
+                  media={g.media}
                   alt={`${g.label} — ${g.category}`}
-                  loading="lazy"
-                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-warmbrown-700/55 via-warmbrown-700/10 to-transparent" />
