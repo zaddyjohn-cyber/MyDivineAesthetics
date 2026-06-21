@@ -5,6 +5,7 @@ import FeaturedServices from '../components/sections/FeaturedServices.jsx';
 import GalleryPreview from '../components/sections/GalleryPreview.jsx';
 
 // Below-the-fold sections load only when scrolled into view
+const ProviderPreview = lazy(() => import('../components/sections/ProviderPreview.jsx'));
 const GoogleReviews = lazy(() => import('../components/sections/GoogleReviews.jsx'));
 const LeadMagnet = lazy(() => import('../components/sections/LeadMagnet.jsx'));
 const InstagramFeed = lazy(() => import('../components/sections/InstagramFeed.jsx'));
@@ -18,6 +19,9 @@ export default function Home() {
       <Hero />
       <DivineApproach />
       <FeaturedServices />
+      <Suspense fallback={fallback}>
+        <ProviderPreview />
+      </Suspense>
       <GalleryPreview />
       <Suspense fallback={fallback}>
         <GoogleReviews />
