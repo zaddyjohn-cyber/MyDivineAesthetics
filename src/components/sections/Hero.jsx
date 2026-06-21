@@ -10,7 +10,7 @@ const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
 function useEnable3D() {
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     // Save bandwidth: respect Save-Data hint when present
     const saveData = navigator?.connection?.saveData;

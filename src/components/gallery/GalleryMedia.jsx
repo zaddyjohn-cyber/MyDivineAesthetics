@@ -1,17 +1,8 @@
+import LazyVideo from '../media/LazyVideo.jsx';
+
 export default function GalleryMedia({ media, alt, className = '' }) {
   if (media?.type === 'video') {
-    return (
-      <video
-        src={media.src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-label={alt}
-        className={className}
-      />
-    );
+    return <LazyVideo src={media.src} ariaLabel={alt} className={className} />;
   }
   return (
     <img

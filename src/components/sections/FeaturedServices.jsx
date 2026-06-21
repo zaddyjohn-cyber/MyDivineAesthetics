@@ -2,22 +2,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
+import LazyVideo from '../media/LazyVideo.jsx';
 import { featuredServices } from '../../data/services.js';
+
+const mediaClass =
+  'absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105';
 
 function ServiceMedia({ media, title }) {
   if (media?.type === 'video') {
-    return (
-      <video
-        src={media.src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-label={title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    );
+    return <LazyVideo src={media.src} ariaLabel={title} className={mediaClass} />;
   }
   if (media?.type === 'image') {
     return (
@@ -26,7 +19,7 @@ function ServiceMedia({ media, title }) {
         alt={title}
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        className={mediaClass}
       />
     );
   }

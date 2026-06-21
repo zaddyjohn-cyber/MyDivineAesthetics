@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Calendar, Heart, Shield, Play } from 'lucide-react';
 import BookButton from '../booking/BookButton.jsx';
+import LazyVideo from '../media/LazyVideo.jsx';
 
 const highlights = [
   {
@@ -79,13 +80,9 @@ export default function FinalCTA() {
               {/* Frame */}
               <div className="relative overflow-hidden rounded-[28px] border border-champagne-100/30 bg-warmbrown-700/40 shadow-halo">
                 <div className="relative aspect-[9/16]">
-                  <video
+                  <LazyVideo
                     src={`${import.meta.env.BASE_URL}divine-ritual.mp4`}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="none"
+                    ariaLabel="A divine ritual"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   {/* Subtle vignette so the video blends into the card */}
