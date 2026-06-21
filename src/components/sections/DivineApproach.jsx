@@ -1,28 +1,38 @@
 import { motion } from 'framer-motion';
 import { Stethoscope, Leaf, HeartHandshake, Sparkles } from 'lucide-react';
 import SectionHeader from './SectionHeader.jsx';
+import {
+  MedicalPrecisionArt,
+  NaturalBeautyArt,
+  WholePersonArt,
+  ConfidenceArt,
+} from '../illustrations/PillarArt.jsx';
 
 const pillars = [
   {
     icon: Stethoscope,
+    Art: MedicalPrecisionArt,
     title: 'Medical Precision',
     body:
       'Every treatment is rooted in clinical training, safety, and an artist’s sense of proportion. Nothing rushed. Nothing guessed.',
   },
   {
     icon: Leaf,
+    Art: NaturalBeautyArt,
     title: 'Natural Beauty',
     body:
       'We don’t change who you are. We refine, soften, and enhance — so the result still looks like the most rested version of you.',
   },
   {
     icon: HeartHandshake,
+    Art: WholePersonArt,
     title: 'Whole-Person Wellness',
     body:
       'From IV hydration to weight loss support, your skin and your wellness are treated as one — because they are.',
   },
   {
     icon: Sparkles,
+    Art: ConfidenceArt,
     title: 'Confidence & Self-Love',
     body:
       'You leave seen, heard, and lit from within. Care that honors your worth, not just your appearance.',
@@ -46,9 +56,10 @@ export default function DivineApproach() {
           subtitle="My Divine Aesthetics isn’t about changing who you are. It’s about helping you see — and gently enhance — what was already beautiful."
         />
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => {
             const Icon = p.icon;
+            const Art = p.Art;
             return (
               <motion.article
                 key={p.title}
@@ -57,17 +68,23 @@ export default function DivineApproach() {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="group relative overflow-hidden rounded-3xl glass-card gold-border p-7"
+                className="group relative overflow-hidden rounded-3xl glass-card gold-border"
               >
-                <div className="halo-glow -right-10 -top-10 h-32 w-32 bg-champagne-100/80" />
-                <div className="relative">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold text-warmbrown-700 shadow-soft">
+                {/* Illustrated header */}
+                <div className="relative h-36 overflow-hidden bg-gradient-to-br from-cream-50 via-blush-50 to-champagne-50 sm:h-40">
+                  <div className="halo-glow -right-10 -top-10 h-32 w-32 bg-champagne-100/80" />
+                  <Art className="absolute inset-0 h-full w-full" />
+                  {/* Soft bottom fade so the illustration meets the card body smoothly */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/70 to-transparent" />
+                </div>
+
+                {/* Body */}
+                <div className="relative p-6 sm:p-7">
+                  <span className="absolute -top-6 right-6 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold text-warmbrown-700 shadow-soft ring-4 ring-white/70">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 font-display text-2xl text-warmbrown-700">
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-warmbrown-500">{p.body}</p>
+                  <h3 className="font-display text-2xl text-warmbrown-700">{p.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-warmbrown-600">{p.body}</p>
                 </div>
               </motion.article>
             );
