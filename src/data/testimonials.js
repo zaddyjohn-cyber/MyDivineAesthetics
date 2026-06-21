@@ -85,7 +85,7 @@ export const galleryItems = [
     category: 'Injectables',
     label: 'Refined Botox Refresh',
     caption: 'Subtle, artful tweaks that soften — never freeze — expression.',
-    media: { type: 'image', src: UNSPLASH('1555820585-c5ae44394b79') },
+    media: { type: 'video', src: `${BASE}gallery/refined-botox-refresh.mp4` },
   },
   {
     category: 'Acne Care',
