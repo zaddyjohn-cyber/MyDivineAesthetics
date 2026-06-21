@@ -70,13 +70,62 @@ export const blogPosts = [
   },
 ];
 
+const UNSPLASH = (id) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=80`;
+
 export const galleryItems = [
-  { category: 'Skin Care', label: 'The Divine Glow Facial', tone: 'from-blush-100 to-champagne-50' },
-  { category: 'Injectables', label: 'Botox — Forehead', tone: 'from-champagne-50 to-cream-100' },
-  { category: 'Acne Care', label: 'Acne Program — 3 Months', tone: 'from-cream-100 to-blush-100' },
-  { category: 'Facial Balancing', label: 'Lip & Chin Balance', tone: 'from-blush-100 to-blush-50' },
-  { category: 'Wellness', label: 'Glow Drip Series', tone: 'from-champagne-100 to-blush-100' },
-  { category: 'Skin Care', label: 'Radiance Renewal Peel', tone: 'from-cream-50 to-champagne-50' },
-  { category: 'Injectables', label: 'Crow’s Feet — Soft Refresh', tone: 'from-blush-50 to-champagne-100' },
-  { category: 'Acne Care', label: 'Cystic Acne — 6 Months', tone: 'from-cream-100 to-blush-50' },
+  {
+    category: 'Skin Care',
+    label: 'The Divine Glow Facial',
+    caption: 'A calm, sensory ritual designed to leave skin lit from within.',
+    image: UNSPLASH('1570172619644-dfd03ed5d881'),
+  },
+  {
+    category: 'Injectables',
+    label: 'Refined Botox Refresh',
+    caption: 'Subtle, artful tweaks that soften — never freeze — expression.',
+    image: UNSPLASH('1555820585-c5ae44394b79'),
+  },
+  {
+    category: 'Acne Care',
+    label: 'Personalized Acne Program',
+    caption: 'Medical-grade protocols, monthly check-ins, real-life progress.',
+    image: UNSPLASH('1674739375749-7efe56fc8bbb'),
+  },
+  {
+    category: 'Facial Balancing',
+    label: 'Lip & Chin Harmony',
+    caption: 'Quiet rebalancing that honors your natural proportions.',
+    image: UNSPLASH('1581182800629-7d90925ad072'),
+  },
+  {
+    category: 'Wellness',
+    label: 'The Divine Glow Drip',
+    caption: 'Vitamin-rich hydration for radiance, recovery, and clarity.',
+    image: UNSPLASH('1552693673-1bf958298935'),
+  },
+  {
+    category: 'Skin Care',
+    label: 'Radiance Renewal Peel',
+    caption: 'A custom chemistry brightens dullness and reveals fresh skin.',
+    image: UNSPLASH('1585945037805-5fd82c2e60b1'),
+  },
+  {
+    category: 'Injectables',
+    label: 'Soft Refresh — Crow’s Feet',
+    caption: 'A gentle smoothing that keeps your smile entirely yours.',
+    image: UNSPLASH('1580870069867-74c57ee1bb07'),
+  },
+  {
+    category: 'Acne Care',
+    label: 'Calm & Clear Plan',
+    caption: 'Designed for inflamed, hormonal, and cystic skin journeys.',
+    image: UNSPLASH('1581182815808-b6eb627a8798'),
+  },
+  {
+    category: 'Wellness',
+    label: 'Inside the Studio',
+    caption: 'A private, considered space made for sacred self-care.',
+    image: UNSPLASH('1573461160327-b450ce3d8e7f'),
+  },
 ];
