@@ -105,6 +105,48 @@ export default function Hero() {
             >
               <DivineScene />
 
+              {/* Video orb infused inside the divine globe */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                className="pointer-events-none absolute left-1/2 top-1/2 z-[5] -translate-x-1/2 -translate-y-1/2"
+                aria-hidden="true"
+              >
+                <div className="relative h-[210px] w-[210px] sm:h-[260px] sm:w-[260px] lg:h-[300px] lg:w-[300px]">
+                  {/* Outer gold halo glow */}
+                  <div className="absolute -inset-6 rounded-full bg-gradient-gold opacity-50 blur-2xl animate-glow" />
+                  {/* Gold ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-gold opacity-90" />
+                  {/* Cream gap */}
+                  <div className="absolute inset-[3px] rounded-full bg-cream-50/40 backdrop-blur-sm" />
+                  {/* Video well — circular mask */}
+                  <div className="absolute inset-[8px] overflow-hidden rounded-full ring-1 ring-inset ring-white/40 shadow-halo">
+                    <video
+                      src={`${import.meta.env.BASE_URL}divine-hero.mp4`}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                    />
+                    {/* Soft inner vignette so the video blends with the divine palette */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-warmbrown-700/40 via-transparent to-cream-50/10" />
+
+                    {/* Blinking brand overlay — covers any original watermark */}
+                    <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 bg-gradient-to-t from-warmbrown-700/95 via-warmbrown-700/70 to-transparent px-3 pb-4 pt-6 text-center">
+                      <p className="animate-brand-blink font-display text-[15px] leading-tight text-cream-50 sm:text-[17px]">
+                        My Divine <span className="italic gold-text">Aesthetics</span>
+                      </p>
+                      <p className="animate-brand-blink text-[8px] uppercase tracking-[0.32em] text-champagne-100 sm:text-[9px]">
+                        Sacred · Self · Care
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
               {/* Floating appointment card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -57,6 +57,7 @@ export default {
         'float-slow': 'float 10s ease-in-out infinite',
         shimmer: 'shimmer 3s linear infinite',
         glow: 'glow 4s ease-in-out infinite',
+        'brand-blink': 'brand-blink 1.6s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -70,6 +71,10 @@ export default {
         glow: {
           '0%, 100%': { opacity: 0.6 },
           '50%': { opacity: 1 },
+        },
+        'brand-blink': {
+          '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 8px rgba(239,217,177,0.7))' },
+          '50%': { opacity: 0.55, filter: 'drop-shadow(0 0 16px rgba(239,217,177,1))' },
         },
       },
     },
