@@ -20,6 +20,7 @@ const pillars = [
     title: 'Natural Beauty',
     body:
       'We don’t change who you are. We refine, soften, and enhance — so the result still looks like the most rested version of you.',
+    watermarkCover: { top: '14%', right: '30%', width: '14%', height: '13%' },
   },
   {
     icon: HeartHandshake,
@@ -78,6 +79,14 @@ export default function DivineApproach() {
                     decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                  {/* Targeted watermark cover (frosted blur + soft tint) */}
+                  {p.watermarkCover && (
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute rounded-full bg-cream-50/60 backdrop-blur-md"
+                      style={p.watermarkCover}
+                    />
+                  )}
                   {/* Champagne tint for brand cohesion */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-champagne-100/10 via-transparent to-white/40 mix-blend-multiply" />
                   {/* Soft bottom fade so the image meets the card body smoothly */}
