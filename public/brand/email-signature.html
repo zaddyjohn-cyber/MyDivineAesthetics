@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Signature — My Divine Aesthetics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: Outfit, system-ui, sans-serif; background: #FBF7F1; color: #2A1B0F; padding: 40px 24px; max-width: 760px; margin: 0 auto; }
+      h1 { font-family: 'Cormorant Garamond', Georgia, serif; }
+      .preview { background: white; padding: 28px; border-radius: 18px; box-shadow: 0 12px 40px -12px rgba(80,56,39,.18); }
+      .actions { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+      button { background: linear-gradient(135deg,#F7EBD2,#EFD9B1,#D4AC70); color: #2A1B0F; border: 0; padding: 10px 18px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; }
+      code { display: block; background: #f5f5f5; padding: 12px; border-radius: 8px; font-size: 12px; white-space: pre-wrap; word-break: break-all; max-height: 240px; overflow: auto; margin-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <h1>Email signature</h1>
+    <p>Below is the live preview. Click <strong>Copy HTML</strong> and paste into Gmail / Outlook / Apple Mail signature settings.</p>
+
+    <div class="preview" id="sig">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Outfit, Arial, sans-serif; color: #2A1B0F;">
+        <tr>
+          <td valign="top" style="padding-right: 22px; border-right: 1px solid #EFD9B1;">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#EFD9B1,#D4AC70,#B8843D);padding:3px;">
+              <div style="width:100%;height:100%;border-radius:50%;background:#FBF7F1;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;color:#553B28;">M</div>
+            </div>
+          </td>
+          <td valign="top" style="padding-left: 22px;">
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;line-height:1.1;color:#2A1B0F;">Imani Bryan</div>
+            <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#B8843D;margin-top:2px;">Founder · DNP, FNP-C, PMHNP-BC</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;color:#553B28;margin-top:8px;">My Divine Aesthetics</div>
+            <div style="font-size:12px;color:#3F2A1A;margin-top:10px;line-height:1.6;">
+              <a href="tel:+16179430892" style="color:#3F2A1A;text-decoration:none;">+1 (617) 943-0892</a>&nbsp;·&nbsp;
+              <a href="mailto:hello@mydivineaesthetics.com" style="color:#3F2A1A;text-decoration:none;">hello@mydivineaesthetics.com</a><br>
+              <a href="https://zaddyjohn-cyber.github.io/MyDivineAesthetics/" style="color:#B8843D;text-decoration:none;">mydivineaesthetics.com</a>&nbsp;·&nbsp;
+              <a href="https://wa.me/16179430892" style="color:#128C7E;text-decoration:none;">WhatsApp</a>&nbsp;·&nbsp;
+              <a href="https://instagram.com/mydivineaesthetics" style="color:#B8843D;text-decoration:none;">@mydivineaesthetics</a>
+            </div>
+            <div style="font-size:11px;color:#735540;margin-top:10px;font-style:italic;">Enhance. Restore. Glow.</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button onclick="copyHtml()">Copy HTML</button>
+      <button onclick="window.print()">Print preview</button>
+    </div>
+    <code id="code"></code>
+
+    <script>
+      const html = document.getElementById('sig').innerHTML.trim();
+      document.getElementById('code').textContent = html;
+      function copyHtml() {
+        navigator.clipboard.writeText(html).then(() => alert('Signature HTML copied.'));
+      }
+    </script>
+  </body>
+</html>

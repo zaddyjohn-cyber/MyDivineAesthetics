@@ -1,20 +1,22 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight } from 'lucide-react';
 import PageHero from '../components/sections/PageHero.jsx';
 import FinalCTA from '../components/sections/FinalCTA.jsx';
-import { blogPosts } from '../data/testimonials.js';
+import { posts } from '../data/posts.js';
 
 const CATEGORIES = ['All', 'Skin Care', 'Injectables', 'Acne Care', 'IV Hydration', 'Philosophy'];
 
 export default function Blog() {
   const [cat, setCat] = useState('All');
-  const posts = useMemo(
-    () => (cat === 'All' ? blogPosts : blogPosts.filter((p) => p.category === cat)),
+  const filtered = useMemo(
+    () => (cat === 'All' ? posts : posts.filter((p) => p.category === cat)),
     [cat]
   );
 
-  const featured = blogPosts[0];
+  const featured = posts[0];
+  const grid = filtered.filter((p) => p.slug !== featured.slug);
 
   return (
     <>
@@ -57,7 +59,8 @@ export default function Blog() {
           >
             <div className="grid lg:grid-cols-[1.1fr_1fr]">
               <div className="relative aspect-[16/10] bg-gradient-to-br from-blush-100 via-champagne-50 to-cream-100 lg:aspect-auto">
-                <div className="halo-glow left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 bg-champagne-100/80" />
+                <div className="halo-glow left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 bg-rose-200/55" />
+                <div className="halo-glow right-10 bottom-10 h-48 w-48 bg-champagne-100/70" />
                 <span className="absolute left-5 top-5 rounded-full bg-white/70 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-warmbrown-600 backdrop-blur">
                   Featured · {featured.category}
                 </span>
@@ -66,18 +69,18 @@ export default function Blog() {
                 <h2 className="font-display text-3xl leading-tight text-warmbrown-700 sm:text-4xl">
                   {featured.title}
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-warmbrown-500">
+                <p className="mt-4 text-base leading-relaxed text-warmbrown-600">
                   {featured.excerpt}
                 </p>
-                <div className="mt-6 flex items-center gap-4 text-xs text-warmbrown-400">
+                <div className="mt-6 flex items-center gap-4 text-xs text-warmbrown-500">
                   <span className="inline-flex items-center gap-1.5">
                     <Clock className="h-3.5 w-3.5" /> {featured.readTime}
                   </span>
                   <span>By Imani Bryan, DNP</span>
                 </div>
-                <button type="button" className="btn-gold mt-7">
+                <Link to={`/blog/${featured.slug}`} className="btn-gold mt-7">
                   Read Article <ArrowRight className="h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </div>
           </motion.article>
@@ -88,9 +91,9 @@ export default function Blog() {
       <section className="relative pb-16">
         <div className="container-luxe">
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((p, i) => (
+            {grid.map((p, i) => (
               <motion.article
-                key={p.title}
+                key={p.slug}
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
@@ -98,8 +101,9 @@ export default function Blog() {
                 whileHover={{ y: -6 }}
                 className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/65 p-6 backdrop-blur-xl"
               >
-                <div className="aspect-[16/10] rounded-2xl bg-gradient-to-br from-cream-100 via-blush-50 to-champagne-50">
-                  <div className="halo-glow left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 bg-champagne-100/70" />
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gradient-to-br from-cream-100 via-blush-50 to-champagne-50">
+                  <div className="halo-glow left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 bg-rose-200/45" />
+                  <div className="halo-glow right-4 bottom-4 h-24 w-24 bg-champagne-100/70" />
                 </div>
                 <div className="mt-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.22em]">
                   <span className="rounded-full bg-gradient-blush-gold px-3 py-1 text-warmbrown-700">
@@ -112,17 +116,17 @@ export default function Blog() {
                 <h3 className="mt-4 font-display text-xl leading-snug text-warmbrown-700">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-warmbrown-500">{p.excerpt}</p>
+                <p className="mt-3 text-sm leading-relaxed text-warmbrown-600">{p.excerpt}</p>
 
-                <button
-                  type="button"
+                <Link
+                  to={`/blog/${p.slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-warmbrown-700"
                 >
                   Read More
                   <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                     →
                   </span>
-                </button>
+                </Link>
               </motion.article>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Calendar, Heart, Shield, Play } from 'lucide-react';
+import BookButton from '../booking/BookButton.jsx';
 
 const highlights = [
   {
@@ -54,9 +55,7 @@ export default function FinalCTA() {
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link to="/contact" className="btn-gold">
-                  <Sparkles className="h-4 w-4" /> Book Now
-                </Link>
+                <BookButton>Book Now</BookButton>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-champagne-100/50 bg-white/15 px-7 py-3.5 text-sm font-semibold text-cream-50 backdrop-blur-md transition hover:bg-white/25"

@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, Shield, Leaf, HeartHandshake, Stethoscope } from 'lucide-react';
+import BookButton from '../booking/BookButton.jsx';
 
 const DivineScene = lazy(() => import('../3d/DivineScene.jsx'));
 
@@ -58,9 +59,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.28 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <Link to="/contact" className="btn-gold">
-                <Sparkles className="h-4 w-4" /> Book Your Appointment
-              </Link>
+              <BookButton>Book Your Appointment</BookButton>
               <Link to="/services" className="btn-ghost">
                 Explore Services <ArrowRight className="h-4 w-4" />
               </Link>

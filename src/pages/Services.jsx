@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import PageHero from '../components/sections/PageHero.jsx';
 import FinalCTA from '../components/sections/FinalCTA.jsx';
+import BookButton from '../components/booking/BookButton.jsx';
 import { serviceCategories } from '../data/services.js';
 
 function PriceRow({ name, price, highlight }) {
@@ -62,9 +62,9 @@ function ServiceCategory({ category, index }) {
               </div>
             </div>
 
-            <Link to="/contact" className="btn-gold mt-8">
-              <Sparkles className="h-4 w-4" /> Book Now
-            </Link>
+            <div className="mt-8">
+              <BookButton preset={category.eyebrow}>Book {category.eyebrow}</BookButton>
+            </div>
           </div>
 
           <motion.div

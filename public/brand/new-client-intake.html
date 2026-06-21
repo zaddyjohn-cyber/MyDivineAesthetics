@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Client Intake — My Divine Aesthetics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: #FBF7F1; color: #2A1B0F; font-family: Outfit, system-ui, sans-serif; }
+      .page { max-width: 820px; margin: 32px auto; background: #fff; border-radius: 24px; box-shadow: 0 30px 80px -30px rgba(80,56,39,.25); overflow: hidden; }
+      header { background: linear-gradient(135deg, #FBF7F1 0%, #F7EBD2 50%, #F8D8DE 100%); padding: 48px 48px 36px; }
+      .eyebrow { display: inline-block; padding: 6px 14px; border: 1px solid rgba(184,132,61,.4); border-radius: 999px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; background: rgba(255,255,255,.6); }
+      h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; line-height: 1.1; margin: 18px 0 8px; }
+      .gold { background: linear-gradient(135deg, #C69753, #EFD9B1, #B8843D); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
+      .lede { color: #553B28; font-size: 14px; line-height: 1.5; max-width: 560px; }
+      form { padding: 36px 48px 28px; }
+      fieldset { border: 0; padding: 0 0 28px; margin: 0; border-bottom: 1px solid rgba(184,132,61,.15); }
+      legend { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: #2A1B0F; padding: 18px 0 12px; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      label { display: block; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #B8843D; font-weight: 600; margin-bottom: 6px; }
+      input[type="text"], input[type="tel"], input[type="email"], input[type="date"], textarea, select { width: 100%; border: 1px solid rgba(184,132,61,.35); background: #FBF7F1; padding: 10px 12px; border-radius: 12px; font: inherit; color: #2A1B0F; }
+      textarea { min-height: 90px; resize: vertical; }
+      .check { display: flex; align-items: start; gap: 10px; margin-top: 10px; font-size: 13px; color: #3F2A1A; line-height: 1.5; }
+      .check input { margin-top: 4px; }
+      .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+      .actions { display: flex; gap: 12px; padding: 28px 48px 40px; justify-content: flex-end; flex-wrap: wrap; }
+      button { background: linear-gradient(135deg,#F7EBD2,#EFD9B1,#D4AC70); color: #2A1B0F; border: 0; padding: 12px 24px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; }
+      .ghost { background: transparent; border: 1px solid rgba(184,132,61,.4); color: #2A1B0F; }
+      footer { background: #2A1B0F; color: #F7EBD2; padding: 20px 48px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; text-align: center; }
+      @media print {
+        body { background: white; }
+        .page { box-shadow: none; margin: 0; border-radius: 0; }
+        .actions { display: none; }
+      }
+      @media (max-width: 640px) { .grid, .row { grid-template-columns: 1fr; } header, form, .actions { padding-left: 24px; padding-right: 24px; } h1 { font-size: 34px; } }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <header>
+        <span class="eyebrow">New Client Intake</span>
+        <h1>Let&rsquo;s plan your <span class="gold">divine ritual.</span></h1>
+        <p class="lede">A short, calm intake so we can tailor your visit. Everything you share is confidential under our HIPAA Notice.</p>
+      </header>
+
+      <form>
+        <fieldset>
+          <legend>Your information</legend>
+          <div class="grid">
+            <div><label>Full name</label><input type="text" required></div>
+            <div><label>Date of birth</label><input type="date" required></div>
+            <div><label>Email</label><input type="email" required></div>
+            <div><label>Phone</label><input type="tel" required></div>
+            <div><label>Preferred pronouns</label><input type="text"></div>
+            <div><label>Emergency contact</label><input type="text"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your goals</legend>
+          <label>What brought you in today?</label>
+          <textarea placeholder="Skin concerns, services you're curious about, occasion you're planning for, etc."></textarea>
+          <label style="margin-top:14px;">Services you're considering</label>
+          <div class="row">
+            <label class="check"><input type="checkbox"> Skin Care / Facials</label>
+            <label class="check"><input type="checkbox"> Botox</label>
+            <label class="check"><input type="checkbox"> Facial Balancing</label>
+            <label class="check"><input type="checkbox"> Acne Care</label>
+            <label class="check"><input type="checkbox"> IV Hydration</label>
+            <label class="check"><input type="checkbox"> Medical Weight Loss</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Medical & skin history</legend>
+          <div class="grid">
+            <div><label>Allergies</label><input type="text" placeholder="Medication, latex, fragrance, etc."></div>
+            <div><label>Current medications</label><input type="text"></div>
+            <div><label>Past procedures</label><input type="text" placeholder="Botox, filler, peels, lasers"></div>
+            <div><label>Skin sensitivities</label><input type="text"></div>
+          </div>
+          <label style="margin-top:14px;">Anything else we should know</label>
+          <textarea placeholder="Pregnancy, breastfeeding, recent vaccines, recent illness, autoimmune conditions, etc."></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Consent &amp; policies</legend>
+          <label class="check"><input type="checkbox" required> I have read and agree to the <strong>Cancellation Policy</strong>.</label>
+          <label class="check"><input type="checkbox" required> I have read the <strong>HIPAA Notice</strong> and consent to treatment.</label>
+          <label class="check"><input type="checkbox"> Send me occasional skin tips and offers (you can opt out anytime).</label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="ghost" onclick="window.print()">Print &amp; sign</button>
+          <button type="submit">Submit Intake</button>
+        </div>
+      </form>
+
+      <footer>My Divine Aesthetics · Sacred Self-Care · +1 (617) 943-0892 · hello@mydivineaesthetics.com</footer>
+    </article>
+  </body>
+</html>

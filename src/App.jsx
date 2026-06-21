@@ -5,13 +5,23 @@ import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import ScrollToTop from './components/layout/ScrollToTop.jsx';
 import WhatsAppFab from './components/widgets/WhatsAppFab.jsx';
+import { BookingProvider } from './components/booking/BookingModal.jsx';
+import ExitIntent from './components/widgets/ExitIntent.jsx';
+import MobileBookBar from './components/widgets/MobileBookBar.jsx';
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
 const Gallery = lazy(() => import('./pages/Gallery.jsx'));
 const Blog = lazy(() => import('./pages/Blog.jsx'));
+const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
+const Faqs = lazy(() => import('./pages/Faqs.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
+const Privacy = lazy(() => import('./pages/Privacy.jsx'));
+const Cancellation = lazy(() => import('./pages/Cancellation.jsx'));
+const Hipaa = lazy(() => import('./pages/Hipaa.jsx'));
+const Accessibility = lazy(() => import('./pages/Accessibility.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 12 },
@@ -31,6 +41,7 @@ export default function App() {
   const location = useLocation();
 
   return (
+    <BookingProvider>
     <div className="relative min-h-screen overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
@@ -43,14 +54,23 @@ export default function App() {
               <Route path="/services" element={<PageShell><Services /></PageShell>} />
               <Route path="/gallery" element={<PageShell><Gallery /></PageShell>} />
               <Route path="/blog" element={<PageShell><Blog /></PageShell>} />
+              <Route path="/blog/:slug" element={<PageShell><BlogPost /></PageShell>} />
+              <Route path="/faqs" element={<PageShell><Faqs /></PageShell>} />
               <Route path="/contact" element={<PageShell><Contact /></PageShell>} />
-              <Route path="*" element={<PageShell><Home /></PageShell>} />
+              <Route path="/privacy" element={<PageShell><Privacy /></PageShell>} />
+              <Route path="/cancellation" element={<PageShell><Cancellation /></PageShell>} />
+              <Route path="/hipaa" element={<PageShell><Hipaa /></PageShell>} />
+              <Route path="/accessibility" element={<PageShell><Accessibility /></PageShell>} />
+              <Route path="*" element={<PageShell><NotFound /></PageShell>} />
             </Routes>
           </AnimatePresence>
         </Suspense>
       </main>
       <Footer />
       <WhatsAppFab />
+      <MobileBookBar />
+      <ExitIntent />
     </div>
+    </BookingProvider>
   );
 }

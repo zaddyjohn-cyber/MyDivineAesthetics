@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
 import Logo from './Logo.jsx';
+import BookButton from '../booking/BookButton.jsx';
 
 const NAV = [
   { to: '/', label: 'Home' },
@@ -76,10 +77,7 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link to="/contact" className="btn-gold hidden md:inline-flex">
-              <Sparkles className="h-4 w-4" />
-              Book Now
-            </Link>
+            <BookButton className="hidden md:inline-flex">Book Now</BookButton>
             <button
               type="button"
               aria-label="Toggle menu"
@@ -118,12 +116,7 @@ export default function Navbar() {
                   {item.label}
                 </NavLink>
               ))}
-              <Link
-                to="/contact"
-                className="btn-gold mt-2 w-full"
-              >
-                <Sparkles className="h-4 w-4" /> Book Now
-              </Link>
+              <BookButton className="mt-2 w-full">Book Now</BookButton>
             </div>
           </motion.div>
         )}

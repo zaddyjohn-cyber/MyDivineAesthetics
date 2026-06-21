@@ -134,8 +134,15 @@ export default function Footer() {
 
         <div className="divider-gold my-10" />
 
-        <div className="flex flex-col items-center justify-between gap-3 text-xs text-warmbrown-400 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 text-xs text-warmbrown-500 sm:flex-row">
           <p>© {new Date().getFullYear()} My Divine Aesthetics. All rights reserved.</p>
+          <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link to="/privacy" className="transition hover:text-warmbrown-700">Privacy</Link>
+            <Link to="/cancellation" className="transition hover:text-warmbrown-700">Cancellation</Link>
+            <Link to="/hipaa" className="transition hover:text-warmbrown-700">HIPAA Notice</Link>
+            <Link to="/accessibility" className="transition hover:text-warmbrown-700">Accessibility</Link>
+            <Link to="/faqs" className="transition hover:text-warmbrown-700">FAQs</Link>
+          </nav>
           <p className="font-display italic text-warmbrown-500">
             Enhance. Restore. Glow.
           </p>
